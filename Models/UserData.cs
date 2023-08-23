@@ -1,13 +1,8 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson.Serialization.Serializers;
-using MongoDB.Driver.Linq;
-
-namespace UserDataService.Models
+﻿
+namespace ASP_Minesweeper.Models
 {
     public class UserData
     {
-        [BsonId]
         public Guid User_Id { get; set; }
 
         public int User_Wins { get; set; } = 0;
