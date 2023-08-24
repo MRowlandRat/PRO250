@@ -6,3 +6,14 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<form asp-action="Start" method="get">
+    <label>Easy</label>
+    <input type="radio" name="difficulty" value="easy" checked="checked">
+    <label>Medium</label>
+    <input type="radio" name="difficulty" value="med">
+    <label>Hard</label>
+    <input type="radio" name="difficulty" value="hard">
+    <button type="submit">Start</button>
+</form>
+</div>

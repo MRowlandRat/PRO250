@@ -1,0 +1,51 @@
+﻿@{
+    string boardJson = Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.board);
+    string gameBoardJson = Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.gameBoard);
+    string choiceBoardJson = Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.choiceBoard);
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <table class="table table-fit table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            @for (int i = 0; i < ViewBag.board.GetLength(0); i++)
+                            {
+                                <th scope="col">@(i + 1)</th>
+                            }
+                        </tr>
+                    </thead>
+
+                    @for (int i = 0; i < ViewBag.board.GetLength(0); i++)
+                    {
+                        <tr>
+                            <th scope="col">@(i + 1)</th>
+                            @for (int j = 0; j < ViewBag.board.GetLength(0); j++)
+                            {
+                                <td>@ViewBag.board[i, j]</td>
+                            }
+                        </tr>
+                    }
+                </table>
+            </div>
+            @if (ViewBag.state == "lost" || ViewBag.state == "won")
+            {
+                <h1>You @ViewBag.state!</h1>
+                <a asp-action="index"> Click here to return home</a>
+            }
+            else
+            {
+                <div class="col-md-12">
+                    <form asp-action="Start" asp-controller="Home">
+                        <input type="text" name="x" placeholder="x" />
+                        <input type="text" name="y" placeholder="y" />
+                        <input type="hidden" name="board" value="@boardJson" />
+                        <input type="hidden" name="game" value="@gameBoardJson" />
+                        <input type="hidden" name="choice" value="@choiceBoardJson" />
+                        <button class="btn btn-dark" type="submit">Make Move</button>
+                    </form>
+                </div>
+            }
+        </div>
+    </div>
+}
