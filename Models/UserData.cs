@@ -1,5 +1,4 @@
-﻿
-namespace ASP_Minesweeper.Models
+﻿namespace ASP_Minesweeper.Models
 {
     public class UserData
     {

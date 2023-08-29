@@ -1,0 +1,32 @@
+﻿version: '3.8'
+
+networks:
+  PRO250:
+    external: false
+
+services:
+  PRO250UserDataServiceDBMongo:
+    container_name: PRO250UserDataServiceDBMongo
+    image: mongo:latest
+    restart: always
+    hostname: PRO250UserDataServiceDBMongo
+    ports:
+      - "27017:27017"
+    networks:
+      - PRO250
+
+  User_DataMircoService:
+    build:
+      context: https://github.com/MRowlandRat/UserDataService.git
+      dockerfile: Dockerfile
+    image: user_data_mirco_service
+    restart: always
+    expose:
+      - "8080"
+      - "8081"
+    ports:
+      - "8080:80"
+    networks:
+      - PRO250
+    depends_on:
+      - PRO250UserDataServiceDBMongo
