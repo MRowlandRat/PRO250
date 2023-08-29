@@ -253,6 +253,7 @@ namespace ASP_Minesweeper.Controllers
         {
             if (this.game_board[x, y] == 'B')
             {
+                //db.AddLos(user)
                 return "lost";
 
             }
@@ -263,6 +264,8 @@ namespace ASP_Minesweeper.Controllers
 
             if (CheckWin())
             {
+
+                //db.AddWin(user)
                 return "won";
             }
             return null;

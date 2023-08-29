@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using ASP_Minesweeper.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ASP_Minesweeper.Data
@@ -9,5 +10,7 @@ namespace ASP_Minesweeper.Data
             : base(options)
         {
         }
+
+        public DbSet<UserData> Movies { get; set; }
     }
 }
