@@ -1,7 +1,10 @@
-﻿namespace ASP_Minesweeper.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ASP_Minesweeper.Models
 {
     public class UserData
     {
+        [Key]
         public Guid User_Id { get; set; }
 
         public int User_Wins { get; set; } = 0;

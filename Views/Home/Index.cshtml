@@ -3,17 +3,31 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome To Minesweeper</h1>
+    <h2>Here You Can Login To Track How Many Games You Have Played, And Choose Diffrent Difficulties.</h2>
 </div>
 
 <form asp-action="Start" method="get">
-    <label>Easy</label>
-    <input type="radio" name="difficulty" value="easy" checked="checked">
-    <label>Medium</label>
-    <input type="radio" name="difficulty" value="med">
-    <label>Hard</label>
-    <input type="radio" name="difficulty" value="hard">
-    <button type="submit">Start</button>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>
+                    <button class="btn btn-lg btn-primary" type="submit">Start Game</button>
+                </th>
+                <td>
+                    <label style="font-size:xx-large">Easy</label>
+                    <input class="form-check-input" style="vertical-align:text-bottom" type="checkbox" value="Easy" name="difficulty" checked="checked">
+                </td>
+                <td>
+                    <label style="font-size:xx-large">Medium</label>
+                    <input class="form-check-input" style="vertical-align:text-bottom" type="checkbox" value="Med" name="difficulty">
+                </td>
+                <td>
+                    <label style="font-size:xx-large">Hard</label>
+                    <input class="form-check-input" style="vertical-align:text-bottom" type="checkbox" value="Hard" name="difficulty">
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </form>
 </div>

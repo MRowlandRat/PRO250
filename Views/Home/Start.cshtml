@@ -8,10 +8,10 @@
                 <table class="table table-fit table-bordered">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <td scope="col">#</td>
                             @for (int i = 0; i < ViewBag.board.GetLength(0); i++)
                             {
-                                <th scope="col">@(i + 1)</th>
+                                <td scope="col">@(i + 1)</td>
                             }
                         </tr>
                     </thead>
